@@ -1,9 +1,10 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, CORS
 import yt_dlp as youtube_dl
 import re
 import os
 
 app = Flask(__name__)
+CORS(app)  # Configuración para permitir CORS
 
 DOWNLOAD_FOLDER = "videos_descargados"
 if not os.path.exists(DOWNLOAD_FOLDER):
